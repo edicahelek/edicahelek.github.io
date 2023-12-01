@@ -328,7 +328,7 @@ $('.promojumbo').html(rupiah(data.detail.harga.jumbo-data.detail.promo));
 $('button').click(function(){
 	$('button').attr('style','background-color:#cccccc');
 	$('button').html("<img src='/assets/1.gif' width='30'/>");
-	setTimeout(function(){window.open("/loading.html?kode="+data.detail.title.replace(/ /g, '%20'));},5000);
+	setTimeout(function(){window.location.href="/loading.html?kode="+data.detail.title.replace(/ /g, '%20');},5000);
 });
 });
 </script>
