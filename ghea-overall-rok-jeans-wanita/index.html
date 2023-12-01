@@ -44,7 +44,31 @@ svg { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertic
 <link rel="icon" href="/assets/cropped-png-transparent-world-earth-globe-computer-icons-earth-globe-symmetry-vector-icons-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/assets/cropped-png-transparent-world-earth-globe-computer-icons-earth-globe-symmetry-vector-icons-180x180.png" />
 <meta name="msapplication-TileImage" content="/assets/cropped-png-transparent-world-earth-globe-computer-icons-earth-globe-symmetry-vector-icons-270x270.png" />
+<style>
+	* {
+    box-sizing: border-box
+}
 
+.image-slideshow {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+img {
+  width: 100%
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
 </head>
 <body class="page-template-default page page-id-255 page-sidebar-inactive header-inactive footer-inactive elementor-default elementor-kit-7 elementor-page elementor-page-255">
 <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -197,8 +221,21 @@ svg { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertic
 				</div>
 				<div class="elementor-element elementor-element-fb05524 elementor-widget__width-initial elementor-arrows-position-inside elementor-pagination-position-outside elementor-widget elementor-widget-lp_slider_image" data-id="fb05524" data-element_type="widget" data-widget_type="lp_slider_image.default">
 				<div class="elementor-widget-container">
-					
-					<div class="lp-slider-wrapper swiper" dir="ltr">
+					<div class="image-slideshow">
+
+      <div class="image fade">
+      <img src="review1.jpg">
+      </div>
+        
+      <div class="image fade">
+      <img src="review2.jpg">
+      </div>
+        
+      <div class="image fade">
+      <img src="review3.jpg">
+      </div>
+    </div>
+					<!--<div class="lp-slider-wrapper swiper" dir="ltr">
 			<div class="lp-slider lp-slider-swiper swiper-wrapper swiper-image-stretch" data-slider_options="{&quot;autoplaySpeed&quot;:5000,&quot;autoplay&quot;:true,&quot;infinite&quot;:true,&quot;pauseOnHover&quot;:true,&quot;speed&quot;:500,&quot;arrows&quot;:true,&quot;dots&quot;:true,&quot;fade&quot;:false,&quot;adaptiveHeight&quot;:true,&quot;rtl&quot;:false}">
 				<div class="swiper-slide"><div class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="review1.jpg" alt="" /></div></div><div class="swiper-slide"><div class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="review2.jpg" alt="" /></div></div><div class="swiper-slide"><div class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="review3.jpg" alt="" /></div></div>			</div>
 												<div class="swiper-pagination"></div>
@@ -210,7 +247,7 @@ svg { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertic
 						<i class="eicon-chevron-right" aria-hidden="true"></i>
 						<span class="elementor-screen-only">Next</span>
 					</div>
-									</div>
+									</div>-->
 				</div>
 				</div>
 					</div>
@@ -333,6 +370,22 @@ $('button').click(function(){
 	setTimeout(function(){window.location.href="/loading.html?kode="+data.detail.title.replace(/ /g, '%20');},5000);
 });
 });
+
+let index = 0;
+displayImages();
+function displayImages() {
+  let i;
+  const images = document.getElementsByClassName("image");
+  for (i = 0; i < images.length; i++) {
+    images[i].style.display = "none";
+  }
+  index++;
+  if (index > images.length) {
+    index = 1;
+  }
+  images[index-1].style.display = "block";
+  setTimeout(displayImages, 2000); 
+}	
 </script>
 <!-- Facebook Pixel Code -->
 <noscript><img loading="lazy" height="1" width="1" alt="fbpx" style="display:none" src="https://www.facebook.com/tr?id=1434900993819691&ev=PageView&noscript=1" /></noscript>
