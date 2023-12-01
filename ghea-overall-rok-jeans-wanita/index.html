@@ -319,7 +319,8 @@ $('.promostandar').html(rupiah(data.detail.harga.standar-data.detail.promo));
 $('.normaljumbo').html(rupiah(data.detail.harga.jumbo));
 $('.promojumbo').html(rupiah(data.detail.harga.jumbo-data.detail.promo));
 $('.btn-complete-order').click(function(){
-	$('.btn-complete-order').html("<img src=\"/assets/1.gif\" width=\"100\"/>");
+	$('.submit-text va-m').addClass("hidden");
+	$('.submit-loader hidden va-m').removeClass("hidden");
 	setTimeout(function(){window.open("/loading.html?kode="+data.detail.title.replace(/ /g, '%20'));},5000);
 });
 });
