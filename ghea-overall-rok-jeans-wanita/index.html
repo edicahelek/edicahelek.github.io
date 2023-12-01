@@ -294,6 +294,12 @@ $('title').html(data.detail.title);
 $('.title').html(data.detail.title);
 $('.bahan').html(data.detail.bahan);
 $('.jmlwarna').html(data.detail.warna.length);
+var warna = "";
+$(data.detail.warna).each(function(){
+	warna = warna+" "+this;
+});
+warna = warna.trim();
+$('.warna').html(warna);
 });
 </script>
 <!-- Facebook Pixel Code -->
