@@ -314,6 +314,10 @@ $(data.detail.size).each(function(){
 size = size.slice(2);
 $('.size').html(size);
 $('.promo').html(rupiah(data.detail.promo));
+$('.normalstandar').html(data.detail.harga.standar);
+$('.promostandar').html(rupiah(data.detail.harga.standar-data.detail.promo));
+$('.normaljumbo').html(data.detail.harga.jumbo);
+$('.promojumbo').html(rupiah(data.detail.harga.jumbo-data.detail.promo));
 });
 </script>
 <!-- Facebook Pixel Code -->
