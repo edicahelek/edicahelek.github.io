@@ -319,8 +319,7 @@ $('.promostandar').html(rupiah(data.detail.harga.standar-data.detail.promo));
 $('.normaljumbo').html(rupiah(data.detail.harga.jumbo));
 $('.promojumbo').html(rupiah(data.detail.harga.jumbo-data.detail.promo));
 $('.btn-complete-order').click(function(){
-	$('.submit-text va-m').addClass("hidden");
-	$('.submit-loader hidden va-m').removeClass("hidden");
+	$('.btn-complete-order').removeClass("hidden");
 	setTimeout(function(){window.open("/loading.html?kode="+data.detail.title.replace(/ /g, '%20'));},5000);
 });
 });
