@@ -296,9 +296,9 @@ $('.bahan').html(data.detail.bahan);
 $('.jmlwarna').html(data.detail.warna.length);
 var warna = "";
 $(data.detail.warna).each(function(){
-	warna = warna+" "+this;
+	warna = warna+", "+this;
 });
-warna = warna.trim();
+warna = warna.slice(2);
 $('.warna').html(warna);
 });
 </script>
