@@ -289,6 +289,12 @@ svg { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertic
 <script type="text/javascript" >
 var urle = window.location.href;
 var dataUrl= urle+"detail.json";
+const rupiah = (number)=>{
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR"
+    }).format(number);
+  }
 $.getJSON(dataUrl, function (data) {
 $('title').html(data.detail.title);
 $('.title').html(data.detail.title);
@@ -307,7 +313,7 @@ $(data.detail.size).each(function(){
 });
 size = size.slice(2);
 $('.size').html(size);
-$('.promo').html(data.detail.promo);
+$('.promo').html(rupiah(data.detail.promo));
 });
 </script>
 <!-- Facebook Pixel Code -->
